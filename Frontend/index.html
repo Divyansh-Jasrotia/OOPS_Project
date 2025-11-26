@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Habit Judge</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">Habit <span>Judge</span></div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <h1>Track Your Habits.<br>Improve Your Life.</h1>
+    <p>A modern habit accountability tool with real scoring & rewards.</p>
+</section>
+
+<!-- FORM SECTION -->
+<section class="form-section">
+    <h2>Add a Habit</h2>
+    <div class="card">
+        <label>Habit Name</label>
+        <input type="text" id="habitName" placeholder="e.g. Drink Water">
+
+        <label>Habit Type</label>
+        <select id="habitType">
+            <option value="good">Good Habit</option>
+            <option value="bad">Bad Habit</option>
+        </select>
+
+        <label>Importance</label>
+        <select id="importance">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+
+        <button onclick="addHabit()">Add Habit</button>
+    </div>
+</section>
+
+<!-- DAILY REPORT SECTION -->
+<section class="form-section">
+    <h2>Daily Habit Report</h2>
+    <div class="card">
+        <label>Select Habit</label>
+        <select id="reportHabit"></select>
+
+        <label>Did you perform the habit?</label>
+        <select id="habitResult">
+            <option value="completed">Completed / Avoided</option>
+            <option value="failed">Failed / Did Bad Habit</option>
+        </select>
+
+        <button onclick="submitReport()">Submit Report</button>
+    </div>
+</section>
+
+<!-- DASHBOARD -->
+<section class="dashboard">
+    <h2>Your Progress</h2>
+
+    <div class="stats-container">
+        <div class="stat-card">
+            <h3>Total Points</h3>
+            <p id="totalPoints">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Weekly Reward 
+                <span id="rewardInfoBtn" class="info-btn">ℹ️</span>
+
+                <div id="rewardPopup" class="reward-popup">
+                    <div class="popup-content" id="rewardText"></div>
+                </div>
+            </h3>
+            <p>Streak: <span id="currentStreak">0</span> week(s)</p>
+            <p>Goal: <span id="currentGoal">100</span> points</p>
+            <p id="rewardBadge">None</p>
+        </div>
+    </div>
+
+    <h3>Habit List</h3>
+    <ul id="habitList"></ul>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
